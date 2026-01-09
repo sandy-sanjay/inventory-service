@@ -1,13 +1,13 @@
 package com.inventory.inventoryservice.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name="products")
+@Table(name = "products")
+@Getter
+@Setter
 public class Product {
 
     @Id
@@ -17,10 +17,8 @@ public class Product {
     private String name;
     private double price;
     private int quantity;
-
     @Column(name = "image_url")
     private String imageUrl;
-
 
 
 }
