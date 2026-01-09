@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/products")
 @RequiredArgsConstructor
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
 
     private final ProductService productService;
@@ -47,6 +47,7 @@ public class ProductController {
             @PathVariable Long id,
             @RequestBody StockUpdateRequest request
     ) {
+        System.out.println("🔥 ADD STOCK HIT: id=" + id + ", qty=" + request.getQuantity());
         return productService.updateProduct(id, request.getQuantity());
     }
 }
